@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			color: #0077b6;
+			margin-top: 50px;
+		}
+		button {
+			background-color: #0077b6;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin: 10px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		button:hover {
+			background-color: #005082;
+		}
+		.button-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 50px;
+		}
+		.button-container button {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Winner design Online Examination</h1>
+	<div class="button-container">
+		<button onclick="location.href='/admin.html'">Admin Login</button>
+		<button>Sample Question Papers</button>
+		<button onclick="location.href='/student.html'">Student Login Form</button>
+		<button onclick="location.href='/results.html'">Check Results</button>
+
+	</div>
+</body>
+</html>

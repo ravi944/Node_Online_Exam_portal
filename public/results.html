@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			color: #0077b6;
+			margin-top: 50px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input[type="email"], input[type="password"] {
+			width: 300px;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0px 0px 5px #ccc;
+			font-size: 16px;
+			text-align: center;
+		}
+		input[type="submit"] {
+			background-color: #0077b6;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin-top: 20px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #005082;
+		}
+        button {
+			background-color: #0077b6;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin: 10px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		button:hover {
+			background-color: #005082;
+		}
+		.button-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 50px;
+		}
+		.button-container button {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Results Page</h1>
+	<form action="/auth" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Submit</button>
+      </form>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			color: #428bca;
+			margin-top: 30px;
+			text-align: center;
+		}
+
+		form {
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 30px auto;
+			padding: 30px;
+			max-width: 500px;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			margin: 10px 0;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			width: 100%;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #428bca;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+			width: 100%;
+		}
+
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: 5px;
+			text-align: center;
+		}
+		button[type="submit"] {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #005082;
+    }
+	</style>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<form onsubmit="return validateForm()" action="/submitStudent" method="POST">
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" placeholder="Enter your username">
+	    
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" placeholder="Enter your email">
+    	
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" placeholder="Enter your password">
+	    	
+		<label for="confirm_password">Confirm Password</label>
+		<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
+	    
+	    <span class="error" id="password_error"></span>
+	    	
+		<button type="submit">Submit</button>
+	</form>
+
+	<script>
+		function validateForm() {
+			var username = document.getElementById("username").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var confirm_password = document.getElementById("confirm_password").value;
+
+			if (username == "") {
+				alert("Please enter your username.");
+				return false;
+			}
+			if (!email.endsWith("@gmail.com")) {
+				alert("Please enter your email in correct format.");
+				return false;
+			}
+			if (password == "") {
+				alert("Please enter your password.");
+				return false;
+			}
+			if (confirm_password == "") {
+				alert("Please confirm your password.");
+				return false;
+			}
+
+			if (password != confirm_password) {
+				alert("Passwords do not match.");
+				return false;
+			}
+			var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@,_])(?!.*[^\w@_]).{8,}$/;
+			if (!regex.test(password)) {
+				alert("Password must contain at least one lowercase letter, one uppercase letter, and only the following special characters: @ , _");
+				return false;
+			}
+            if (password.length < 8) {
+                alert("Password length  must be 8 or more than 8.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

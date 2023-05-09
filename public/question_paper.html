@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Question Paper Generator</title>
+  </head>
+  <body>
+    <h1>Question Paper Generator</h1>
+    <form>
+      <label for="num-questions">Number of Questions:</label>
+      <input type="number" id="num-questions" name="num-questions"><br><br>
+
+      <div id="questions-container"></div>
+
+      <button type="submit">Generate Question Paper</button>
+    </form>
+
+    <script>
+      const form = document.querySelector('form');
+      const questionsContainer = document.querySelector('#questions-container');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const numQuestions = document.querySelector('#num-questions').value;
+        let questionsHTML = '';
+
+        for (let i = 1; i <= numQuestions; i++) {
+          questionsHTML += `
+            <label for="question-${i}">Question ${i}:</label>
+            <input type="text" id="question-${i}" name="question-${i}"><br><br>
+          `;
+
+          for (let j = 1; j <= 4; j++) {
+            questionsHTML += `
+              <label for="question-${i}-option-${j}">Option ${j}:</label>
+              <input type="text" id="question-${i}-option-${j}" name="question-${i}-option-${j}"><br><br>
+            `;
+          }
+        }
+
+        questionsContainer.innerHTML = questionsHTML;
+      });
+    </script>
+  </body>
+</html>
