@@ -94,9 +94,9 @@ app.post('/login', (req, res) => {
             </tbody>
             </table>
             <div style="display: flex; margin-top: 20px;">
-            // <button onclick="location.href='/question_paper.html'" type="button" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease-in-out; margin-right: 10px;">
-            //   Create Question Paper 
-            // </button>
+             <button onclick="location.href='/question_paper.html'" type="button" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease-in-out; margin-right: 10px;">
+               Create Question Paper 
+             </button>
             <button onclick="window.location.href='/home.html'" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease-in-out; margin-right: 10px;">
               Go to Home Page
             </button>
